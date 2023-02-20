@@ -1,0 +1,56 @@
+{
+    "name": "BirdInputActions",
+    "maps": [
+        {
+            "name": "InGame",
+            "id": "957c74ca-d0b0-4694-a554-b099508123af",
+            "actions": [
+                {
+                    "name": "FlapWings",
+                    "type": "Button",
+                    "id": "c1cc3172-80ef-45e3-8e6b-6a6d0ecd37f1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6fd2aec3-1520-4b57-ada0-06e7a70bcf43",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlapWings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37a6087b-41d5-44fc-b8f5-f190f29c2be6",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlapWings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c85be86-d85a-4b50-bf25-173a0e457217",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlapWings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
