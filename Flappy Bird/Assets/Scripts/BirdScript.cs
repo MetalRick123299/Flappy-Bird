@@ -9,20 +9,22 @@ public class BirdScript : MonoBehaviour
     private BirdInputActions birdInputActions;
     private InputAction movement;
     public Rigidbody2D birdRigidBody;
+    private LogicManger logic;
+    public event Action OnGameOver;
     public float flapStrength = 12.5f;
+
+    public bool inGame = true;
 
     // Start is called before the first frame update
     void Awake()
     {
         birdInputActions = new BirdInputActions();
 
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManger>();
+
         birdRigidBody = gameObject.GetComponent<Rigidbody2D>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        OnGameOver += GameOver;
     }
 
     private void OnEnable()
@@ -46,4 +48,12 @@ public class BirdScript : MonoBehaviour
         birdInputActions.InGame.FlapWings.Disable();
     }
 
+    private void OnCollisionEnter2D(Collision2D other) => OnGameOver?.Invoke();
+
+    private void GameOver()
+    {
+        inGame = false;
+        // Disables Bird Movement
+        OnDisable();
+    }
 }

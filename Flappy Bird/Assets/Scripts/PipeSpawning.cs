@@ -11,23 +11,29 @@ public class PipeSpawning : MonoBehaviour
     public float heightOffset = 5f;
     private float timer = 0;
 
+    private BirdScript bird;
+
     // Start is called before the first frame update
     void Start()
     {
-        // spawnPipe();
+        bird = GameObject.FindGameObjectWithTag("Player").GetComponent<BirdScript>();
+        spawnPipe();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer < timeBetweenSpawns)
+        if (bird.inGame)
         {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            spawnPipe();
-            timer = 0;
+            if (timer < timeBetweenSpawns)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                spawnPipe();
+                timer = 0;
+            }
         }
 
     }
